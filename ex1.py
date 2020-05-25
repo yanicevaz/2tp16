@@ -16,8 +16,8 @@ class Window(QWidget):
         self.setLayout(self.layout)
 
     def buttonClicked(self):
-        liste = ["CSI", "CIR", "BIOST", "CENT", "BIAST", "EST"]
-        new = random.choice(liste)
+        lst = ["CSI", "CIR", "BIOST", "CENT", "BIAST"]
+        new = random.choice(lst)
         self.label.setText(new)
         return
 
