@@ -1,7 +1,6 @@
 from PySide2.QtWidgets import *
 
 class Window(QWidget):
-
     def __init__(self):
         QWidget.__init__(self)
         self.setWindowTitle("IHM")
@@ -14,15 +13,13 @@ class Window(QWidget):
         self.button.clicked.connect(self.buttonClicked)
         self.setLayout(self.layout)
 
+        self.counter = 0
+
 
     def buttonClicked(self):
-        if self.button.text() == "Changer le texte":
-            self.button.setText("Clic 1")
-        else:
-            click = int((self.button.text())[5:]) + 1
-            self.button.setText("Clic "+str(click))
-        self.textedit.setText(self.button.text())
-        return
+        self.counter += 1
+        self.button.setText(f"Clic {self.counter}")
+        self.textedit.setText(f"Click {self.counter}")
 
 if __name__ == "__main__":
     application = QApplication([])
